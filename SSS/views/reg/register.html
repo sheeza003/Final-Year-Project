@@ -1,0 +1,102 @@
+
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+  <title>Student Registration Form</title>
+  
+  <link rel="stylesheet" type="text/css" media="all" href="styles.css">
+  
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<!--[if lt IE 9]>
+  <script type="text/javascript" src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+
+<body>
+  <div id="w">
+    <h1>Register! for your new account</h1>
+    
+    <form id="signup" name="signup" method="post" action="../../register.php">
+      <div class="row">
+        <label for="Username"> <p>Name</p> </label>
+        <input type="text" name="name" id="username" tabindex="1" autocomplete="off" class="formtext">
+      </div>
+      
+<div class="row">
+        <label for="city"> <p> Select your city </p></label>
+        <select name="loc" id="dropdown" tabindex="5" class="formtext">
+          <option value="Islamabad"> Islamabd</option>
+          <option value="Islamabad"> Karachi</option>
+          <option value="Islamabad"> Rawalpindi</option>
+          <option value="Islamabad"> Lahore</option>
+        </select>
+      </div>
+      
+      <div class="row">
+        <label for="city"> <p>Select your Institution</p> </label>
+        <select name="ins" id="dropdown" tabindex="5" class="formtext">
+          <option value="Punjab University"> Punjab University</option>
+          <option value="FAST University"> FAST University</option>
+          <option value="NUST University">NUST University</option>
+          <option value="Comsats University">Comsats University</option>
+        </select>
+      </div>
+
+      <div class="row">
+        <label for="email"><p>E-mail Address</p></label>
+        <input type="email" name="email" id="email" tabindex="2" autocomplete="off" class="formtext">
+      </div>
+      
+      <div class="row">
+        <label for="password"><p>Password</p></label>
+        <input type="password" name="password" id="password" tabindex="3" class="formtext">
+      </div>
+      
+      <div class="row">
+        <label for="password2"> <p>Repeat Password</p> </label>
+        <input type="password" name="password2" id="password2" tabindex="4" class="formtext">
+      </div>
+
+      <div id="captcontainer">
+        <div class="row">
+          <img src="image.php" alt="CAPTCHA Image" class="captchaimg">
+        </div>
+
+        <div class="row">
+          <label for="captcha">Please Enter the Captcha</label>
+          <input type='text' name = 'cap' id="captcha" tabindex="5" class="formtext" />
+          </div>
+    </div>
+      <div id="resultscontainer">
+        <input type="submit" name="submit" id="submit" value="Register!">
+
+        </div>
+        <span id="submitresults"></span>
+      </div>
+ <br>
+
+    </form>
+  </div>
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+  $("input").keyup(function(){
+    var val01 = $("#username").val();
+    var val02 = $("#email").val();
+    var val03 = $("#password").val();
+    var val04 = $("#password2").val();
+    
+    // check if each input has at least one character
+    // if yes, we display the CAPTCHA
+    if(val01 != "" && val02 != "" && val03 != "" && val04 != "") {
+      $("#captcontainer").slideDown(450);
+    }
+  });
+   });
+  
+</script>
+
+</body>
+</html>
